@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<!-- <meta name="google-signin-client_id" content="1051868260372-g60esko208480vd6iod0ptru2dbu169k.apps.googleusercontent.com"> -->
+</head>
+
+
+<style>
+  /* Add your CSS styles here */
+  /* Add your CSS styles here */
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-form {
+    margin: 0 auto;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  .login-form h2 {
+    margin-bottom: 20px;
+  }
+  .login-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .login-form button:hover {
+    background-color: #0056b3;
+  }
+
+  .login-form button,
+  .g_id_onload {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .formbold-main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+    }
+
+      /* Style for the reset link */
+      .reset-link {
+        display: block;
+        margin-top: 10px;
+        text-align: right;
+        font-size: 14px;
+        text-decoration: underline;
+        cursor: pointer; /* Change cursor to pointer when hovering over the reset link */
+    }
+
+    
+    .price-box{
+      display: inline-block;
+      /* width: 80px; Adjust the width as needed */
+      /* padding: 8px; Adjust the padding as needed */
+        /* border: 1px solid #ccc; */
+        /* border-radius: 5px; */
+        /* text-align: center; */
+      width: 100%;
+      height: 50px; /* Adjust the height as needed */
+      /* padding: 12px 22px; */
+      padding: 10px;
+      /* border-radius: 5px; */
+      border: 1px solid #dde3ec;
+      background: #ffffff;
+      font-size: 16px;
+      color: #536387;
+      outline: none;
+      resize: none;
+    }
+  
+
+    .formbold-form-wrapper {
+      margin: 0 auto;
+      max-width: 570px;
+      width: 100%;
+      background: white;
+      padding: 40px;
+    }
+  
+    .formbold-form-img {
+      margin-bottom: 45px;
+    }
+  
+    .formbold-input-group {
+      margin-bottom: 18px;
+    }
+  
+    .formbold-form-select {
+      width: 100%;
+      padding: 12px 22px;
+      border-radius: 5px;
+      border: 1px solid #dde3ec;
+      background: #ffffff;
+      font-size: 16px;
+      color: #536387;
+      outline: none;
+      resize: none;
+    }
+  
+    .formbold-input-radio-wrapper {
+      margin-bottom: 25px;
+    }
+    .formbold-radio-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .formbold-radio-label {
+      font-size: 14px;
+      line-height: 24px;
+      color: #07074d;
+      position: relative;
+      padding-left: 25px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .formbold-input-radio {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .formbold-radio-checkmark {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      background-color: #ffffff;
+      border: 1px solid #dde3ec;
+      border-radius: 50%;
+    }
+    .formbold-radio-label
+      .formbold-input-radio:checked
+      ~ .formbold-radio-checkmark {
+      background-color: #6a64f1;
+    }
+    .formbold-radio-checkmark:after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+  
+    .formbold-radio-label
+      .formbold-input-radio:checked
+      ~ .formbold-radio-checkmark:after {
+      display: block;
+    }
+  
+    .formbold-radio-label .formbold-radio-checkmark:after {
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ffffff;
+      transform: translate(-50%, -50%);
+    }
+  
+    .formbold-form-input {
+      width: 100%;
+      padding: 13px 22px;
+      border-radius: 5px;
+      border: 1px solid #dde3ec;
+      background: #ffffff;
+      font-weight: 500;
+      font-size: 16px;
+      color: #07074d;
+      outline: none;
+      resize: none;
+    }
+    .formbold-form-input::placeholder {
+      color: #536387;
+    }
+    .formbold-form-input:focus {
+      border-color: #6a64f1;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+    .formbold-form-label {
+      color: #07074d;
+      font-size: 14px;
+      line-height: 24px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .formbold-form-price {
+      color: #07074d;
+      font-size: 16px;
+      line-height: 24px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .formbold-btn {
+      text-align: center;
+      width: 100%;
+      font-size: 14px;
+      border-radius: 5px;
+      padding: 14px 25px;
+      border: none;
+      font-weight: 500;
+      background-color: #6a64f1;
+      color: white;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+    .formbold-btn:hover {
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+
+
+</head>
+  
+<!-- Google Sign-In -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<body>
+
+<!-- Login Form -->
+<div class="login-form" id="loginFormContainer">
+  <h2>Login</h2>
+  <form id="usernamePasswordForm">
+      <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+      </div>
+      <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+      </div>
+      <div>
+          <button type="submit">Login</button>
+ 
+      <script src="https://accounts.google.com/gsi/client" async defer></script>
+      
+          <div id="g_id_onload"
+               data-client_id="1051868260372-g60esko208480vd6iod0ptru2dbu169k.apps.googleusercontent.com"
+               data-callback="onSignIn">
+          </div>
+          <div class="g_id_signin" data-type="standard"></div>
+    </div>
+          
+</div>
+
+
+<div class="dropdown-wrapper" id="dropdownWrapper" style="display: none;">
+
+<!-- Dropdown Lists (Initially Hidden) -->
+<!-- <div class="formbold-main-wrapper" id="dropdownWrapper" style="display: none;"> -->
+    <!-- Form Wrapper -->
+    <div class="formbold-form-wrapper">
+        <header>
+                <h1>Used Car Price Prediction</h1>
+          </header>
+          <br></br>
+      <form id="myForm">
+          <!-- First Dropdown -->
+          <div class="formbold-input-group">
+              <label class="formbold-form-label">Vehicle Type:</label>
+              <select class="formbold-form-select" id="dropdown1" onchange="updateDropdown2()">
+                  <option value="">...</option>
+              </select>
+          </div>
+
+          <!-- Second Dropdown -->
+          <div class="formbold-input-group" id="secondDropdownGroup" >
+              <label class="formbold-form-label">Brand:</label>
+              <select class="formbold-form-select" id="dropdown2" onchange="updateDropdown3()">
+                  <option value="">...</option>
+              </select>
+          </div>
+
+          <!-- Third Dropdown -->
+          <div class="formbold-input-group" id="thirdDropdownGroup" >
+              <label class="formbold-form-label">Car Model:</label>
+              <select class="formbold-form-select" id="dropdown3" onchange="updateDropdown4()">
+                  <option value="">...</option>
+              </select>
+          </div>
+
+          <!-- Fourth Dropdown -->
+          <div class="formbold-input-group" id="fourthDropdownGroup" >
+              <label class="formbold-form-label">Car Year:</label>
+              <select class="formbold-form-select" id="dropdown4" onchange="updateDropdown5()">
+                  <option value="">...</option>
+              </select>
+          </div>
+
+          <!-- Fifth Dropdown -->
+          <div class="formbold-input-group" id="fifthDropdownGroup" >
+              <label class="formbold-form-label">Color:</label>
+              <select class="formbold-form-select" id="dropdown5" onchange="updateDropdown6()">
+                  <option value="">...</option>
+              </select>
+          </div>
+
+          <!-- Sixth Dropdown -->
+          <div class="formbold-input-group" id="sixthDropdownGroup" >
+              <label class="formbold-form-label">Mileage (KM.):</label>
+              <select class="formbold-form-select" id="dropdown6" onchange="updateDropdown7()">
+                  <option value="">...</option>
+              </select>
+          </div>
+          <!-- Reset Link -->
+        <div class="reset-link" onclick="resetDropdowns()">Reset Selection</div>
+
+          <!-- Submit Button -->
+          <button type="button" class="formbold-btn" onclick="displayPrice()">Submit</button>
+
+          <!-- Price Display -->
+          <br><br> </br></br>
+          <div class="formbold-input-group" id="price" >
+            <label class="formbold-form-price"><b>Used Car Price: </b></label>
+        </div>
+          <div class="price-box">
+            <!-- <label class="formbold-form-label">Predicted:</label> -->
+        <span id="priceDisplay"></span>
+        </div>
+
+
+      </form>
+  </div>
+</div>
+
+
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js"></script>
+<!-- Firebase configuration -->
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyC4WGnXVhTsO-3ldeW7QUHvHlPNULiV10w",
+    authDomain: "dulcet-coast-378816.firebaseapp.com",
+    projectId: "dulcet-coast-378816",
+    storageBucket: "dulcet-coast-378816.appspot.com",
+    messagingSenderId: "1051868260372",
+    appId: "1:1051868260372:web:a7c0f9950c1f004c89df01",
+    measurementId: "G-GRCH0R2DKK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- Firebase login function -->
+<script>
+  function login() {
+    var email = document.getElementById("username").value; // Assuming "username" field is used for email
+    var password = document.getElementById("password").value;
+    
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        // You can redirect or perform other actions upon successful login
+        alert("Login successful!");
+        // Hide the entire login form container
+        document.getElementById("loginFormContainer").style.display = "none";
+        // Show the dropdown section
+        document.getElementById("dropdownWrapper").style.display = "block";
+      })
+      .catch((error) => {
+        var errorMessage = error.message;
+        alert(errorMessage);
+        // Show alert for invalid username or password
+        if (errorMessage === "auth/user-not-found" || errorMessage === "auth/wrong-password") {
+          alert("Invalid username or password. Please try again.");
+        }
+      });
+  }
+</script>
+
+<!-- Event listener trigger -->
+<script>
+  document.getElementById("usernamePasswordForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    login(); // Call the login function when the form is submitted
+  });
+</script>
+
+
+
+<!-- Script for Google Sign-In -->
+<script>
+// Function to show Google Sign-In and hide the login form
+function showGoogleSignIn() {
+    document.getElementById("loginFormContainer").style.display = "none";
+    document.getElementById("googleSignInContainer").style.display = "block";
+}
+;
+</script>
+
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Initialize Google Sign-In client -->
+<script>
+  gapi.load('auth2', function() {
+      gapi.auth2.init({
+          client_id: '1051868260372-qt6pl6qdh1675ssqetht0v16af522639.apps.googleusercontent.com'
+      });
+  });
+  
+  // Function to handle Google Sign-In
+  function googleSignIn() {
+      // Initialize the GoogleAuth object
+      gapi.load('auth2', function() {
+          var auth2 = gapi.auth2.getAuthInstance();
+          // Sign in the user
+          auth2.signIn().then(function(googleUser) {
+              onSignIn(googleUser);
+          }).catch(function(error) {
+              console.log('Google Sign-In Error:', error);
+          });
+      });
+  }
+  
+  // Function to handle sign-in success for Google Sign-In
+  function onSignIn(googleUser) {
+    var id = googleUser.getId();
+    var name = googleUser.getName();
+    var imageUrl = googleUser.getImageUrl();
+    var email = googleUser.getEmail();
+
+    console.log('ID: ' + id); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + name);
+    console.log('Image URL: ' + imageUrl);
+    console.log('Email: ' + email); // This is null if the 'email' scope is not present.
+
+    // List of accepted email addresses
+    var acceptedEmails = ["paweena.rpst@gmail.com", "r_paweena@tripetch-isuzu.co.th", "pimpaxpi@gmail.com", ""];
+
+    // Check if the email is in the list of accepted emails
+    if (acceptedEmails.includes(email)) {
+        // Email is accepted, proceed with login
+        alert("Login successful!");
+        // Hide the login form container
+        document.getElementById("loginFormContainer").style.display = "none";
+        // Show the dropdown section
+        document.getElementById("dropdownWrapper").style.display = "block";
+    } else {
+        // Email is not accepted, show fail message
+        alert("Failed to login. Only specific email addresses are allowed.");
+    }
+}
+  </script>
+
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+
+  
+
+
+<script>
+  // Function to fetch JSON data from file
+  function fetchData(callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.overrideMimeType("application/json");
+      // xhr.open('GET', 'data.json', true);
+      xhr.open('GET', 'https://raw.githubusercontent.com/pwnrpst/used_car_pred/master/data.json', true);
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+              callback(xhr.responseText);
+          }
+      };
+      xhr.send(null);
+  }
+  
+  // Function to update Dropdown List 1
+  function updateDropdown1() {
+      var dropdown1 = document.getElementById("dropdown1");
+      dropdown1.innerHTML = "<option value=''>Select Vehicle Type</option>";
+      fetchData(function(response) {
+          var data = JSON.parse(response);
+          var categories = [...new Set(data.map(item => item.category))];
+          categories.forEach(function(category) {
+              var option = document.createElement("option");
+              option.text = category;
+              option.value = category;
+              dropdown1.add(option);
+          });
+      });
+  }
+  
+  function updateDropdown2() {
+      var dropdown1 = document.getElementById("dropdown1");
+      var dropdown2 = document.getElementById("dropdown2");
+      var selectedOption = dropdown1.options[dropdown1.selectedIndex].value;
+      dropdown2.innerHTML = "<option value=''>Select Brand</option>";
+      fetchData(function(response) {
+          var data = JSON.parse(response);
+          // Filter the data to get only items with the selected category
+          var filteredData = data.filter(item => item.category === selectedOption);
+          // Extract unique brands from the filtered data
+          var brands = [...new Set(filteredData.map(item => item.brand))];
+          // Create options for each brand and add them to dropdown2
+          brands.forEach(function(brand) {
+              var option = document.createElement("option");
+              option.text = brand;
+              option.value = brand;
+              dropdown2.add(option);
+          });
+      });
+  }
+  
+  
+  
+  // Function to update Dropdown List 3 based on selection in Dropdown List 2
+  function updateDropdown3() {
+      var dropdown1 = document.getElementById("dropdown1");
+      var dropdown2 = document.getElementById("dropdown2");
+      var dropdown3 = document.getElementById("dropdown3");
+      var selectedOption1 = dropdown1.options[dropdown1.selectedIndex].value;
+      var selectedOption2 = dropdown2.options[dropdown2.selectedIndex].value;
+      dropdown3.innerHTML = "<option value=''>Select Car Model</option>";
+      fetchData(function(response) {
+          var data = JSON.parse(response);
+          var names = [...new Set(data.filter(item => item.category === selectedOption1 && item.brand === selectedOption2).flatMap(item => item.vehicles.map(vehicle => vehicle.name)))];
+          names.forEach(function(name) {
+              var option = document.createElement("option");
+              option.text = name;
+              option.value = name;
+              dropdown3.add(option);
+          });
+      });
+  }
+  
+  
+  
+  // Function to update Dropdown List 4 based on selection in Dropdown List 3
+  function updateDropdown4() {
+      var dropdown3 = document.getElementById("dropdown3");
+      var dropdown4 = document.getElementById("dropdown4");
+      var selectedOption = dropdown3.options[dropdown3.selectedIndex].value;
+      dropdown4.innerHTML = "<option value=''>Select Car Year</option>";
+      fetchData(function(response) {
+          var data = JSON.parse(response);
+          var years = data.flatMap(item => item.vehicles.filter(vehicle => vehicle.name === selectedOption).map(vehicle => vehicle.year));
+          // Filter unique years
+          var uniqueYears = [...new Set(years)];
+          uniqueYears.forEach(function(year) {
+              var option = document.createElement("option");
+              option.text = year;
+              option.value = year;
+              dropdown4.add(option);
+          });
+      });
+  }
+  
+  
+  // Function to update Dropdown List 5 based on selection in Dropdown List 4
+  function updateDropdown5() {
+      var dropdown3 = document.getElementById("dropdown3");
+      var dropdown4 = document.getElementById("dropdown4");
+      var dropdown5 = document.getElementById("dropdown5");
+      var selectedOption3 = dropdown3.options[dropdown3.selectedIndex].value;
+      var selectedOption4 = dropdown4.options[dropdown4.selectedIndex].value;
+      dropdown5.innerHTML = "<option value=''>Select Color</option>";
+  
+      // Use a Set to store unique colors
+      var uniqueColors = new Set();
+  
+      fetchData(function(response) {
+          var data = JSON.parse(response);
+          data.forEach(function(item) {
+              item.vehicles.forEach(function(vehicle) {
+                  if (vehicle.name === selectedOption3 && vehicle.year === parseInt(selectedOption4)) {
+                      uniqueColors.add(vehicle.color);
+                  }
+              });
+          });
+  
+          // Add unique colors to dropdown5
+          uniqueColors.forEach(function(color) {
+              var option = document.createElement("option");
+              option.text = color;
+              option.value = color;
+              dropdown5.add(option);
+          });
+      });
+  }
+  
+  
+  
+  
+  // Function to update Dropdown List 6 based on selection in Dropdown List 5
+  function updateDropdown6() {
+      var dropdown3 = document.getElementById("dropdown3");
+      var dropdown4 = document.getElementById("dropdown4");
+      var dropdown5 = document.getElementById("dropdown5");
+      var dropdown6 = document.getElementById("dropdown6");
+      var selectedOption3 = dropdown3.options[dropdown3.selectedIndex].value;
+      var selectedOption4 = dropdown4.options[dropdown4.selectedIndex].value;
+      var selectedOption5 = dropdown5.options[dropdown5.selectedIndex].value;
+      dropdown6.innerHTML = "<option value=''>Select Mileage</option>";
+  
+      // Use a Set to store unique mileages
+      var uniqueMiles = new Set();
+  
+      fetchData(function(response) {
+          var data = JSON.parse(response);
+          data.forEach(function(item) {
+              item.vehicles.forEach(function(vehicle) {
+                  if (vehicle.name === selectedOption3 && vehicle.year === parseInt(selectedOption4) && vehicle.color === selectedOption5) {
+                      uniqueMiles.add(vehicle.mileage);
+                  }
+              });
+          });
+  
+          // Add unique mileage options to dropdown6
+          uniqueMiles.forEach(function(mileage) {
+              var option = document.createElement("option");
+              option.text = mileage;
+              option.value = mileage;
+              dropdown6.add(option);
+          });
+      });
+  }
+  
+  
+  
+  
+  
+      // Function to display the price based on the selected options
+      function displayPrice() {
+          var dropdown3 = document.getElementById("dropdown3");
+          var dropdown4 = document.getElementById("dropdown4");
+          var dropdown5 = document.getElementById("dropdown5");
+          var dropdown6 = document.getElementById("dropdown6");
+          var selectedOption3 = dropdown3.options[dropdown3.selectedIndex].value;
+          var selectedOption4 = dropdown4.options[dropdown4.selectedIndex].value;
+          var selectedColor = dropdown5.options[dropdown5.selectedIndex].value;
+          var priceDisplay = document.getElementById("priceDisplay");
+          fetchData(function (response) {
+              var data = JSON.parse(response);
+              var selectedMileage = dropdown6.value;
+              var vehicle = data.find(item =>
+                  item.category === dropdown1.value &&
+                  item.brand === dropdown2.value &&
+                  item.vehicles.some(v =>
+                      v.name === selectedOption3 &&
+                      v.year === parseInt(selectedOption4) &&
+                      v.color === selectedColor &&
+                      v.mileage === selectedMileage
+                  )
+              );
+              if (vehicle) {
+                  var selectedVehicle = vehicle.vehicles.find(v =>
+                      v.name === selectedOption3 &&
+                      v.year === parseInt(selectedOption4) &&
+                      v.color === selectedColor &&
+                      v.mileage === selectedMileage
+                  );
+                  priceDisplay.innerText = "" + selectedVehicle.price + " THB";
+              } else {
+                  priceDisplay.innerText = "Price is not available";
+              }
+          });
+      }
+  
+      // Function to handle form submission
+      function onSubmit() {
+          displayPrice(); // Update price display
+          return false; // Prevent form submission
+      }
+  
+  // Initialize Dropdown List 1
+  updateDropdown1();
+  </script>
+  
+  <script>
+    // Function to reset all dropdown lists
+    function resetDropdowns() {
+        var dropdowns = document.querySelectorAll('.formbold-form-select');
+        dropdowns.forEach(function(dropdown) {
+            dropdown.selectedIndex = 0;
+        });
+        document.getElementById('priceDisplay').innerText = ''; // Clear price display
+    }
+    
+    // Rest of your JavaScript code for updating dropdown lists and displaying price...
+    </script>
+  
+
+</body>
+</html>
