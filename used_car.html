@@ -291,8 +291,8 @@ document.getElementById("usernamePasswordForm").addEventListener("submit", funct
   function fetchData(callback) {
       var xhr = new XMLHttpRequest();
       xhr.overrideMimeType("application/json");
-      xhr.open('GET', 'G:/.shortcut-targets-by-id/0B7L8VdR1y0dcSjJRN1kyTDZfNnc/TIL PP Department DTM/Project_Year_2023/2nd Car Price/06 Interface/data.json', true);
-      // xhr.open('GET', 'https://raw.githubusercontent.com/pwnrpst/used_car_pred/master/data.json', true);
+      // xhr.open('GET', 'data.json', true);
+      xhr.open('GET', 'https://raw.githubusercontent.com/pwnrpst/used_car_pred/master/data.json', true);
       xhr.onreadystatechange = function () {
           if (xhr.readyState == 4 && xhr.status == 200) {
               callback(xhr.responseText);
